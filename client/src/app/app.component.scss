@@ -1,0 +1,27 @@
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr 540px 1fr;
+    grid-template-columns: 1fr 1040px 1fr;
+    grid-template-areas: "top top top" "left canvas right" "btm-left btm-cntr btm-right";
+    align-items: center;
+    justify-items: center;
+    // overflow: hidden;
+}
+
+#menu {
+    grid-area: left;
+}
+
+#game {
+    grid-area: canvas;
+}
+
+#console {
+    grid-area: btm-cntr;
+}
