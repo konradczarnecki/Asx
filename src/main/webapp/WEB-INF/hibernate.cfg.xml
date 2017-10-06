@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <!-- a SessionFactory instance listed as /jndi/name -->
+    <session-factory>
+
+        <!--&lt;!&ndash; properties &ndash;&gt;-->
+        <!--<property name="connection.datasource">dataSource</property>-->
+
+        <!--&lt;!&ndash; cache settings &ndash;&gt;-->
+        <!--<class-cache class="org.hibernate.auction.Item" usage="read-write"/>-->
+        <!--<class-cache class="org.hibernate.auction.Bid" usage="read-only"/>-->
+        <!--<collection-cache collection="org.hibernate.auction.Item.bids" usage="read-write"/>-->
+
+        <mapping class="konra.User"/>
+        <mapping class="konra.CharacterConfig"/>
+        <mapping class="konra.LocationConfig"/>
+        <mapping class="konra.Element"/>
+        <mapping class="konra.Enemy"/>
+
+    </session-factory>
+
+</hibernate-configuration>

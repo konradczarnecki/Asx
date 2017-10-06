@@ -1,0 +1,96 @@
+USERS
+-username pk
+-password
+-location fk
+
+CHARACTERS
+-username pk
+-level
+-exp
+-strength
+-dexteriety
+-perception
+-intelligence
+-speed
+
+WEAPONS
+-id pk
+-username fk
+-name
+-type
+-dmg
+-precision
+-range
+-aps
+-reload
+
+CLOTHING
+-id pk
+-username fk
+-name
+-armor rating
+-buffs
+
+WEAPON TEMPLATES
+-id pk
+-name
+-type
+-dmg
+-precision
+-range
+-aps
+-reload
+
+CLOTHING TEMPLATES
+-id pk
+-username fk
+-name
+-armor rating
+-buffs
+
+EQUIPED WEAPONS
+-username fk
+-weapon id fk
+
+EQUIPED CLOTHING
+-username fk
+-clothing id fk
+
+LOCATIONS
+-id pk
+-background
+
+NEIGHBOURS
+-location_id fk
+-direction
+-destination_id fk
+
+ELEMENTS
+-id pk
+-location id fk
+-x
+-y
+-w
+-h
+-x1
+-y1
+-x2
+-y2
+-img
+
+ENEMY TEMPLATES
+-id pk
+-name
+-strength
+-dexteriety
+-perception
+-intelligence
+-speed
+-weapon template id
+-clothing template id
+-spawn chance
+
+LOCATION_ENEMIES
+-location id fk
+-enemy id fk
+

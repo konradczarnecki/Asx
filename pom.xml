@@ -11,6 +11,9 @@
 
     <properties>
         <spring.version>4.3.9.RELEASE</spring.version>
+        <deploy.user>root</deploy.user>
+        <deploy.ip>138.197.178.123</deploy.ip>
+        <deploy.dir>tomcat7/webapps</deploy.dir>
     </properties>
 
     <dependencies>
@@ -112,11 +115,25 @@
             </plugin>
 
             <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <executions>
                     <execution>
+                        <id>build-angular</id>
                         <phase>validate</phase>
                         <goals>
                             <goal>exec</goal>
@@ -129,6 +146,40 @@
                             </arguments>
                         </configuration>
                     </execution>
+
+                    <execution>
+                        <id>change-prefix</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>python</executable>
+                            <workingDirectory>${project.basedir}/client</workingDirectory>
+                            <arguments>
+                                <argument>change_prefix.py</argument>
+                                <argument>${project.build.finalName}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>deploy</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>pscp</executable>
+                            <workingDirectory>${project.build.directory}</workingDirectory>
+                            <arguments>
+                                <argument>-pw</argument>
+                                <argument>astoria1</argument>
+                                <argument>${project.build.finalName}.war</argument>
+                                <argument>${deploy.user}@${deploy.ip}:/${deploy.dir}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 
@@ -138,7 +189,7 @@
                 <executions>
                     <execution>
                         <id>copy-angular-build</id>
-                        <phase>validate</phase>
+                        <phase>compile</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>

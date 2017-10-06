@@ -19,7 +19,7 @@ export class Character implements CharacterConfig {
     view: CharacterView;
 
     constructor(config: CharacterConfig){
-        
+
         for(let field in config) this[field] = config[field];
         this.view = new CharacterView(config.view);
         this.view.sp = this.speed;
@@ -45,32 +45,32 @@ export class Enemy extends Character {
 
     meta: {                                 // metadata for AI controlling enemy characters
         timer: number                       // time from last direction change
-    }; 
+    };
 }
 
 export class CharacterView implements CharacterViewConfig, Drawable {
-    
+
         w: number; h: number;
         x: number; y: number;
-        z: number;                          // z - determines the layer to draw element to
+        z: number;                          // determines the layer to draw element to
 
         speedX: number; speedY: number;
         sp: number;                         // speed multiplier
-    
+
         dir: Dir;                           // current direction
         prevDir: Dir;                       // last direction that wasn't Dir.NONE
-    
+
         inAir: boolean;
         attacking: boolean;
         alpha: number;
-    
+
         sprites: HTMLImageElement[];
         spr: number;                        // current sprite index
         animationTimeout: number;
         animationSpeed: number;
-    
+
         constructor(config: CharacterViewConfig){
-    
+
             for(let field in config) this[field] = config[field];
             this.loadSprites(config.source);
         }
@@ -92,7 +92,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
         get y2(): number {
             return this.y + this.h;
         }
-    
+
         move(delta: number): void {
             this.x += delta * this.speedX * this.sp / 8;
             this.y += delta * this.speedY * this.sp / 8;
@@ -102,14 +102,14 @@ export class CharacterView implements CharacterViewConfig, Drawable {
             this.x -= delta * this.speedX * this.sp / 8;
             this.y -= delta * this.speedY * this.sp / 8;
         }
-    
+
         changeDirection(direction: Dir): void {
 
             clearTimeout(this.animationTimeout);
-            
+
             if(direction == Dir.NONE) this.stop();
             else {
-                this.spr = frames.walk[direction];                
+                this.spr = frames.walk[direction];
                 this.walk(direction);
              }
 
@@ -134,29 +134,29 @@ export class CharacterView implements CharacterViewConfig, Drawable {
             this.speedX = 0;
             this.speedY = 0;
             this.spr = frames.stand[this.prevDir];
-            clearTimeout(this.animationTimeout);            
+            clearTimeout(this.animationTimeout);
         }
-    
+
         jump(): void {
 
             if(this.inAir) return;
 
             clearTimeout(this.animationTimeout);
-    
+
             this.inAir = true;
             this.spr = frames.jump[this.prevDir];
             this.speedY = -2;
 
-            let ground = this.y;            
-    
+            let ground = this.y;
+
             function gravity(speed: number): number {
                 return  0.2 - 0.07 * speed;
             }
-    
+
             let movement = () => {
 
                 if(this.speedY < 2) this.speedY += gravity(this.speedY);
-                
+
                 if(this.y >= ground) {
 
                     this.speedY = 0;
@@ -167,7 +167,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
                     else this.dir = Dir.NONE; // clear direction to trigger walking animation start
 
                  } else setTimeout(movement, 20);
-            }
+            };
             setTimeout(movement, 20);
         }
 
@@ -177,7 +177,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
 
             this.attacking = true;
             setTimeout(() => {this.attacking = false}, 1000 / (this.sp * 2));
-            
+
             clearTimeout(this.animationTimeout);
 
             let start: number = frames.attack[this.prevDir];
@@ -187,7 +187,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
             let i = start;
 
             let nextFrame = () => {
-                
+
                 if(i < start + 3){
                     this.spr = i++;
                     setTimeout(nextFrame, 60);
@@ -195,7 +195,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
                 } else {
                     this.spr = end;
                     if(this.dir != Dir.NONE) this.walk(this.dir);
-                } 
+                }
             }
             setTimeout(nextFrame, 40);
         }
@@ -210,13 +210,13 @@ export class CharacterView implements CharacterViewConfig, Drawable {
         }
 
         loadSprites(spritesDir): void {
-            
+
             for(let i = 0; i < 18; i++){
-                let img = new Image(); 
+                let img = new Image();
                 let plusOne = i+1;
                 let prefix = plusOne < 10 ? '0' : '';
 
-                img.src = 'assets/' + spritesDir + '/moves_' + prefix + plusOne + '.png';
+                img.src = 'asx/assets/' + spritesDir + '/moves_' + prefix + plusOne + '.png';
                 this.sprites[i] = img;
             }
 
@@ -225,7 +225,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
             for(let i = 18; i < 30; i++){
                 let img = new Image();
                 let prefix: string = imageIdx < 10 ? '0' : '';
-                img.src = 'assets/images/a_' + prefix + imageIdx + '.png';
+                img.src = 'asx/assets/images/a_' + prefix + imageIdx + '.png';
                 this.sprites[i] = img;
                 imageIdx++;
             }

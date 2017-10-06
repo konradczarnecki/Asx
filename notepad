@@ -1,0 +1,1055 @@
+webpackJsonp(["main"],{
+
+/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper\">\n    <menu id=\"menu\"></menu>\n    <game id=\"game\"></game>\n    <console id=\"console\"></console>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".wrapper {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  min-height: 100%;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-rows: 1fr 540px 1fr;\n      grid-template-rows: 1fr 540px 1fr;\n  -ms-grid-columns: 1fr 1040px 1fr;\n      grid-template-columns: 1fr 1040px 1fr;\n  grid-template-areas: \"top top top\" \"left canvas right\" \"btm-left btm-cntr btm-right\";\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -ms-grid-column-align: center;\n      justify-items: center; }\n\n#menu {\n  grid-area: left; }\n\n#game {\n  grid-area: canvas; }\n\n#console {\n  grid-area: btm-cntr; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AppComponent = (function () {
+    function AppComponent() {
+    }
+    AppComponent.prototype.ngOnInit = function () {
+    };
+    return AppComponent;
+}());
+AppComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-root',
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.scss")],
+        providers: []
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__game_game_component__ = __webpack_require__("../../../../../src/app/game/game.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__console_console_component__ = __webpack_require__("../../../../../src/app/console/console.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__menu_menu_component__ = __webpack_require__("../../../../../src/app/menu/menu.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__game_game_component__["a" /* GameComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__console_console_component__["a" /* ConsoleComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__menu_menu_component__["a" /* MenuComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */]
+        ],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__config_service__["a" /* ConfigService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/config.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfigService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__game_logic_config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__game_street_street__ = __webpack_require__("../../../../../src/app/game/street/street.ts");
+
+
+var ConfigService = (function () {
+    function ConfigService() {
+        this.character = __WEBPACK_IMPORTED_MODULE_0__game_logic_config__["c" /* playerDefConfig */];
+        this.location = __WEBPACK_IMPORTED_MODULE_1__game_street_street__["a" /* street */];
+    }
+    return ConfigService;
+}());
+
+//# sourceMappingURL=config.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/console/console.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"console\"></div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/console/console.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".console {\n  border: 2px solid rgba(200, 200, 200, 0.8);\n  width: 1000px;\n  height: 100px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/console/console.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConsoleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ConsoleComponent = (function () {
+    function ConsoleComponent() {
+    }
+    ConsoleComponent.prototype.ngOnInit = function () {
+    };
+    return ConsoleComponent;
+}());
+ConsoleComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'console',
+        template: __webpack_require__("../../../../../src/app/console/console.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/console/console.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], ConsoleComponent);
+
+//# sourceMappingURL=console.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/game.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n    <canvas id=\"canvas\" width=\"1000px\" height=\"500px\"></canvas>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/game.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/game.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GameComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logic_config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logic_keybindings__ = __webpack_require__("../../../../../src/app/game/logic/keybindings.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__logic_game__ = __webpack_require__("../../../../../src/app/game/logic/game.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var GameComponent = (function () {
+    function GameComponent(game) {
+        this.game = game;
+    }
+    GameComponent.prototype.ngOnInit = function () {
+        this.canvas = document.getElementById('canvas');
+        this.context = this.canvas.getContext('2d');
+        this.button = __WEBPACK_IMPORTED_MODULE_1__logic_config__["a" /* Dir */].NONE;
+        __WEBPACK_IMPORTED_MODULE_2__logic_keybindings__["a" /* bindKeys */].bind(this)();
+        this.lastFrame = 0;
+        this.render(this.lastFrame);
+    };
+    GameComponent.prototype.render = function (clock) {
+        var delta = clock - this.lastFrame;
+        this.lastFrame = clock;
+        this.game.setPlayerDir(this.button);
+        this.game.advance(delta);
+        var ctx = this.context;
+        ctx.clearRect(0, 0, 1000, 500);
+        ctx.drawImage(this.game.location.background, 0, 0, 1000, 500);
+        var layers = [[], [], [], [], []]; // create five layers
+        this.game.toDraw().forEach(function (element) { return layers[element.z + 2].push(element); });
+        for (var _i = 0, layers_1 = layers; _i < layers_1.length; _i++) {
+            var layer = layers_1[_i];
+            layer = layer.filter(function (el) { return el.getSprite(); }); // filter out background elements which dont have sprites of their own
+            layer.sort(function (el1, el2) { return el1.y - el2.y; }); // elements in a layer should be drawn top to bottom
+            for (var _a = 0, layer_1 = layer; _a < layer_1.length; _a++) {
+                var el = layer_1[_a];
+                ctx.globalAlpha = el.alpha;
+                ctx.drawImage(el.getSprite(), el.x, el.y, el.w, el.h);
+            }
+        }
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(this.render.bind(this));
+    };
+    return GameComponent;
+}());
+GameComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'game',
+        template: __webpack_require__("../../../../../src/app/game/game.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/game/game.component.scss")],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__logic_game__["a" /* GameService */]]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__logic_game__["a" /* GameService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__logic_game__["a" /* GameService */]) === "function" && _a || Object])
+], GameComponent);
+
+var _a;
+//# sourceMappingURL=game.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/character.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Character; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Enemy; });
+/* unused harmony export CharacterView */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var Character = (function () {
+    function Character(config) {
+        for (var field in config)
+            this[field] = config[field];
+        this.view = new CharacterView(config.view);
+        this.view.sp = this.speed;
+    }
+    Character.prototype.jump = function () {
+        var _this = this;
+        this.view.jump();
+        this.evasion += 20;
+        setTimeout(function () { return _this.evasion -= 20; }, 250);
+    };
+    Character.prototype.attack = function () {
+        this.view.attack();
+    };
+    Character.prototype.getHit = function (damage) {
+        this.hp -= damage;
+        this.view.getHit();
+    };
+    return Character;
+}());
+
+var Enemy = (function (_super) {
+    __extends(Enemy, _super);
+    function Enemy() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Enemy;
+}(Character));
+
+var CharacterView = (function () {
+    function CharacterView(config) {
+        for (var field in config)
+            this[field] = config[field];
+        this.loadSprites(config.source);
+    }
+    Object.defineProperty(CharacterView.prototype, "x1", {
+        // (x1, y1), (x2, y2) defines two corners of collision box rectangle
+        get: function () {
+            return this.x + 8;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterView.prototype, "y1", {
+        get: function () {
+            return this.y + this.h - 20;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterView.prototype, "x2", {
+        get: function () {
+            return this.x + this.w - 8;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CharacterView.prototype, "y2", {
+        get: function () {
+            return this.y + this.h;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CharacterView.prototype.move = function (delta) {
+        this.x += delta * this.speedX * this.sp / 8;
+        this.y += delta * this.speedY * this.sp / 8;
+    };
+    CharacterView.prototype.moveBack = function (delta) {
+        this.x -= delta * this.speedX * this.sp / 8;
+        this.y -= delta * this.speedY * this.sp / 8;
+    };
+    CharacterView.prototype.changeDirection = function (direction) {
+        clearTimeout(this.animationTimeout);
+        if (direction == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE)
+            this.stop();
+        else {
+            this.spr = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].walk[direction];
+            this.walk(direction);
+        }
+        this.dir = direction;
+        this.prevDir = direction != __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE ? direction : this.prevDir;
+    };
+    CharacterView.prototype.walk = function (direction) {
+        this.speedX = direction == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].LEFT ? -1 : direction == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].RIGHT ? 1 : 0;
+        this.speedY = direction == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].UP ? -1 : direction == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].DOWN ? 1 : 0;
+        clearTimeout(this.animationTimeout);
+        var idx = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].walk[direction];
+        this.spr++;
+        if (this.spr == idx + 3)
+            this.spr = idx;
+        this.animationTimeout = setTimeout(this.walk.bind(this, direction), 1 / this.animationSpeed);
+    };
+    CharacterView.prototype.stop = function () {
+        this.speedX = 0;
+        this.speedY = 0;
+        this.spr = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].stand[this.prevDir];
+        clearTimeout(this.animationTimeout);
+    };
+    CharacterView.prototype.jump = function () {
+        var _this = this;
+        if (this.inAir)
+            return;
+        clearTimeout(this.animationTimeout);
+        this.inAir = true;
+        this.spr = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].jump[this.prevDir];
+        this.speedY = -2;
+        var ground = this.y;
+        function gravity(speed) {
+            return 0.2 - 0.07 * speed;
+        }
+        var movement = function () {
+            if (_this.speedY < 2)
+                _this.speedY += gravity(_this.speedY);
+            if (_this.y >= ground) {
+                _this.speedY = 0;
+                _this.y = ground;
+                _this.inAir = false;
+                if (_this.dir == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE)
+                    _this.spr = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].stand[_this.prevDir];
+                else
+                    _this.dir = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE; // clear direction to trigger walking animation start
+            }
+            else
+                setTimeout(movement, 20);
+        };
+        setTimeout(movement, 20);
+    };
+    CharacterView.prototype.attack = function () {
+        var _this = this;
+        if (this.attacking)
+            return;
+        this.attacking = true;
+        setTimeout(function () { _this.attacking = false; }, 1000 / (this.sp * 2));
+        clearTimeout(this.animationTimeout);
+        var start = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].attack[this.prevDir];
+        var end = __WEBPACK_IMPORTED_MODULE_0__config__["b" /* frames */].stand[this.prevDir];
+        this.spr = start;
+        var i = start;
+        var nextFrame = function () {
+            if (i < start + 3) {
+                _this.spr = i++;
+                setTimeout(nextFrame, 60);
+            }
+            else {
+                _this.spr = end;
+                if (_this.dir != __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE)
+                    _this.walk(_this.dir);
+            }
+        };
+        setTimeout(nextFrame, 40);
+    };
+    CharacterView.prototype.getHit = function () {
+        var _this = this;
+        this.alpha = 0.3;
+        setTimeout(function () { return _this.alpha = 1; }, 100);
+    };
+    CharacterView.prototype.getSprite = function () {
+        return this.sprites[this.spr];
+    };
+    CharacterView.prototype.loadSprites = function (spritesDir) {
+        for (var i = 0; i < 18; i++) {
+            var img = new Image();
+            var plusOne = i + 1;
+            var prefix = plusOne < 10 ? '0' : '';
+            img.src = 'assets/' + spritesDir + '/moves_' + prefix + plusOne + '.png';
+            this.sprites[i] = img;
+        }
+        var imageIdx = 1;
+        for (var i = 18; i < 30; i++) {
+            var img = new Image();
+            var prefix = imageIdx < 10 ? '0' : '';
+            img.src = 'assets/images/a_' + prefix + imageIdx + '.png';
+            this.sprites[i] = img;
+            imageIdx++;
+        }
+    };
+    return CharacterView;
+}());
+
+//# sourceMappingURL=character.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/config.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Dir; });
+/* unused harmony export CHAR_CONFIG */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return playerViewConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return playerDefConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return frames; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
+var Dir;
+(function (Dir) {
+    Dir[Dir["LEFT"] = 0] = "LEFT";
+    Dir[Dir["RIGHT"] = 1] = "RIGHT";
+    Dir[Dir["UP"] = 2] = "UP";
+    Dir[Dir["DOWN"] = 3] = "DOWN";
+    Dir[Dir["NONE"] = 4] = "NONE";
+})(Dir || (Dir = {}));
+var CHAR_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('character.configuration');
+var playerViewConfig = {
+    x: 300,
+    y: 300,
+    z: 0,
+    w: 33,
+    h: 48,
+    speedX: 0,
+    speedY: 0,
+    dir: Dir.NONE,
+    inAir: false,
+    attacking: false,
+    sprites: [],
+    spr: 4,
+    animationTimeout: 0,
+    animationSpeed: 1 / 130,
+    source: 'images',
+    alpha: 1
+};
+var playerDefConfig = {
+    name: 'nn',
+    level: 1,
+    hp: 10,
+    ap: 5,
+    strenght: 10,
+    defense: 10,
+    acc: 80,
+    evasion: 20,
+    speed: 1,
+    view: playerViewConfig
+};
+var frames = {
+    attack: [27, 21, 18, 24],
+    stand: [12, 4, 0, 8],
+    walk: [13, 5, 1, 9],
+    jump: [17, 16, 1, 8]
+};
+//# sourceMappingURL=config.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/game.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GameService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__character__ = __webpack_require__("../../../../../src/app/game/logic/character.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location__ = __webpack_require__("../../../../../src/app/game/logic/location.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mob__ = __webpack_require__("../../../../../src/app/game/logic/mob.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var GameService = (function () {
+    function GameService(configService) {
+        this.location = new __WEBPACK_IMPORTED_MODULE_3__location__["b" /* Location */](configService.location);
+        this.player = new __WEBPACK_IMPORTED_MODULE_1__character__["a" /* Character */](configService.character);
+        this.mob = new __WEBPACK_IMPORTED_MODULE_4__mob__["a" /* MobControl */](configService, this);
+        this.mob.startSpawning();
+    }
+    GameService.prototype.setPlayerDir = function (direction) {
+        if (direction != this.player.view.dir)
+            this.player.view.changeDirection(direction);
+    };
+    GameService.prototype.advance = function (delta) {
+        this.player.view.move(delta);
+        this.mob.action(delta);
+        if (this.location.checkMapCollisions(this.player.view, true))
+            this.player.view.moveBack(delta);
+    };
+    GameService.prototype.toDraw = function () {
+        return this.location.elements.concat(this.location.enemyViews, [this.player.view]);
+    };
+    GameService.prototype.attack = function (attacker) {
+        if (attacker.view.attacking)
+            return;
+        attacker.attack();
+        var hitArea;
+        var range = 20;
+        switch (attacker.view.prevDir) {
+            case __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].RIGHT:
+                hitArea = new __WEBPACK_IMPORTED_MODULE_3__location__["a" /* Element */](attacker.view.x1 + attacker.view.w, attacker.view.y1, range, attacker.view.h);
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].LEFT:
+                hitArea = new __WEBPACK_IMPORTED_MODULE_3__location__["a" /* Element */](attacker.view.x1 - range, attacker.view.y1, range, attacker.view.h);
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].UP:
+                hitArea = new __WEBPACK_IMPORTED_MODULE_3__location__["a" /* Element */](attacker.view.x1, attacker.view.y1 - range, attacker.view.w, range);
+                break;
+            case __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].DOWN:
+                hitArea = new __WEBPACK_IMPORTED_MODULE_3__location__["a" /* Element */](attacker.view.x1, attacker.view.y2, attacker.view.w, range);
+                break;
+        }
+        var inRange = [];
+        if (!(attacker instanceof __WEBPACK_IMPORTED_MODULE_1__character__["b" /* Enemy */]))
+            inRange = this.location.enemies.filter(function (enemy) { return __WEBPACK_IMPORTED_MODULE_3__location__["b" /* Location */].checkCollision(enemy.view, hitArea); });
+        else if (__WEBPACK_IMPORTED_MODULE_3__location__["b" /* Location */].checkCollision(this.player.view, hitArea))
+            inRange.push(this.player);
+        for (var _i = 0, inRange_1 = inRange; _i < inRange_1.length; _i++) {
+            var enemy = inRange_1[_i];
+            var hit = Math.random() * 100 < attacker.acc;
+            var evaded = Math.random() * 100 < enemy.evasion;
+            var damage = attacker.strenght - enemy.defense;
+            if (damage < 1)
+                damage = 1;
+            if (hit && !evaded)
+                enemy.getHit(damage);
+            if (enemy.hp <= 0) {
+                if (enemy instanceof __WEBPACK_IMPORTED_MODULE_1__character__["b" /* Enemy */])
+                    this.location.enemies.splice(this.location.enemies.indexOf(enemy), 1);
+                else
+                    this.player = null;
+            }
+        }
+    };
+    GameService.prototype.jump = function (jumper) {
+        jumper.jump();
+    };
+    return GameService;
+}());
+GameService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__config_service__["a" /* ConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__config_service__["a" /* ConfigService */]) === "function" && _a || Object])
+], GameService);
+
+var _a;
+//# sourceMappingURL=game.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/keybindings.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = bindKeys;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+
+function bindKeys() {
+    var _this = this;
+    var player = this.game.player;
+    var attackPressed = false;
+    document.onkeydown = function (evt) {
+        switch (evt.keyCode) {
+            case 37:
+                _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].LEFT;
+                break;
+            case 39:
+                _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].RIGHT;
+                break;
+            case 38:
+                _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].UP;
+                break;
+            case 40:
+                _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].DOWN;
+                break;
+            case 90:
+                _this.game.jump(player);
+                break;
+            case 88:
+                if (attackPressed)
+                    break;
+                _this.game.attack(player);
+                attackPressed = true;
+                break;
+        }
+    };
+    document.onkeyup = function (evt) {
+        switch (evt.keyCode) {
+            case 37:
+                if (_this.button == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].LEFT)
+                    _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE;
+                break;
+            case 39:
+                if (_this.button == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].RIGHT)
+                    _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE;
+                break;
+            case 38:
+                if (_this.button == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].UP)
+                    _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE;
+                break;
+            case 40:
+                if (_this.button == __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].DOWN)
+                    _this.button = __WEBPACK_IMPORTED_MODULE_0__config__["a" /* Dir */].NONE;
+                break;
+            case 88:
+                attackPressed = false;
+        }
+    };
+}
+//# sourceMappingURL=keybindings.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/location.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Location; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Element; });
+var Location = (function () {
+    function Location(config) {
+        this.elements = config.elements;
+        this.background = new Image(1000, 500);
+        this.background.src = config.background;
+        this.enemies = [];
+    }
+    Object.defineProperty(Location.prototype, "enemyViews", {
+        get: function () {
+            return this.enemies.map(function (enemy) { return enemy.view; });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Location.prototype.checkMapCollisions = function (toCheck, checkEnemies) {
+        var collides = function (el) {
+            return toCheck.x2 > el.x1 && toCheck.x1 < el.x2 && toCheck.y2 > el.y1 && toCheck.y1 < el.y2;
+        };
+        if (checkEnemies)
+            return this.elements.some(collides) || this.enemyViews.some(collides);
+        else
+            return this.elements.some(collides);
+    };
+    Location.checkCollision = function (el1, el2) {
+        return el1.x2 > el2.x1 && el1.x1 < el2.x2 && el1.y2 > el2.y1 && el1.y1 < el2.y2;
+    };
+    return Location;
+}());
+
+var Element = (function () {
+    function Element(x, y, w, h, img) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.image = img;
+        this.x1 = x;
+        this.y1 = y;
+        this.x2 = x + w;
+        this.y2 = y + h;
+        this.z = 0;
+        this.alpha = 1;
+    }
+    Element.prototype.setCollisionBox = function (x1, y1, x2, y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+    };
+    Element.prototype.setImage = function (src) {
+        this.image = new Image(this.w, this.h);
+        this.image.src = src;
+    };
+    Element.prototype.getSprite = function () {
+        return this.image;
+    };
+    return Element;
+}());
+
+//# sourceMappingURL=location.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/logic/mob.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MobControl; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__character__ = __webpack_require__("../../../../../src/app/game/logic/character.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location__ = __webpack_require__("../../../../../src/app/game/logic/location.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+
+
+
+var MobControl = (function () {
+    function MobControl(config, game) {
+        this.config = config;
+        this.game = game;
+    }
+    MobControl.prototype.startSpawning = function () {
+        var _this = this;
+        var spawn = function () {
+            for (var _i = 0, _a = _this.config.location.enemiesTemplate; _i < _a.length; _i++) {
+                var enmTemplate = _a[_i];
+                if (Math.random() < 1 && _this.game.location.enemies.length < 1)
+                    _this.spawn(enmTemplate);
+            }
+            setTimeout(spawn, 4000);
+        };
+        setTimeout(spawn, 0);
+    };
+    MobControl.prototype.spawn = function (config) {
+        var toSpawn = new __WEBPACK_IMPORTED_MODULE_0__character__["b" /* Enemy */](config);
+        do {
+            toSpawn.view.x = Math.random() - 0.5 > 0 ? -100 : 1100;
+            toSpawn.view.y = Math.random() * 500;
+        } while (this.game.location.checkMapCollisions(toSpawn.view));
+        toSpawn.view.changeDirection(__WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].RIGHT);
+        toSpawn.meta = {
+            timer: 0
+        };
+        this.game.location.enemies.push(toSpawn);
+    };
+    MobControl.prototype.action = function (delta) {
+        for (var _i = 0, _a = this.game.location.enemies; _i < _a.length; _i++) {
+            var enemy = _a[_i];
+            var dx = this.game.player.view.x - enemy.view.x;
+            var dy = this.game.player.view.y - enemy.view.y;
+            if (Math.abs(dx) < 20 && Math.abs(dy) < 20) {
+                if (enemy.view.speedX > 0 || enemy.view.speedY > 0)
+                    enemy.view.stop();
+                this.game.attack(enemy);
+            }
+            else
+                this.move(enemy, dx, dy, delta);
+            if (__WEBPACK_IMPORTED_MODULE_1__location__["b" /* Location */].checkCollision(this.game.player.view, enemy.view))
+                enemy.view.moveBack(delta);
+        }
+    };
+    MobControl.prototype.move = function (enemy, dx, dy, delta) {
+        enemy.meta.timer += delta;
+        if (enemy.meta.timer > 500) {
+            var dirX = dx > 0 ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].RIGHT : __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].LEFT;
+            var dirY = dy > 0 ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].DOWN : __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].UP;
+            var finalDir = Math.abs(dx) > Math.abs(dy) ? dirX : dirY;
+            enemy.view.changeDirection(finalDir);
+            enemy.meta.timer = 0;
+        }
+        enemy.view.move(delta);
+        if (this.game.location.checkMapCollisions(enemy.view, false)) {
+            enemy.view.moveBack(delta);
+            // sets the direction perpendicular to current, facing player position
+            var newDir = enemy.view.dir == __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].RIGHT || enemy.view.dir == __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].LEFT ?
+                (dy > 0 ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].DOWN : __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].UP) : (dx > 0 ? __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].RIGHT : __WEBPACK_IMPORTED_MODULE_2__config__["a" /* Dir */].LEFT);
+            enemy.view.changeDirection(newDir);
+            enemy.meta.timer = -1000;
+        }
+    };
+    return MobControl;
+}());
+
+//# sourceMappingURL=mob.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/game/street/street.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return street; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__logic_location__ = __webpack_require__("../../../../../src/app/game/logic/location.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logic_config__ = __webpack_require__("../../../../../src/app/game/logic/config.ts");
+
+
+var els = [];
+els.push(new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](0, 0, 367, 188));
+els.push(new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](362, 0, 310, 64));
+els.push(new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](670, 0, 330, 180)); // top buildings
+var img = new Image();
+img.src = 'assets/street/c1.png';
+var c1 = new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](509, 180, 96, 58, img);
+c1.setCollisionBox(519, 208, 594, 231);
+els.push(c1);
+var img2 = new Image();
+img2.src = 'assets/street/c2.png';
+var c2 = new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](691, 186, 192, 56, img2);
+c2.setCollisionBox(704, 209, 876, 230);
+els.push(c2);
+var img3 = new Image();
+img3.src = 'assets/street/roof.png';
+var roof = new __WEBPACK_IMPORTED_MODULE_0__logic_location__["a" /* Element */](636, 338, 364, 162, img3);
+roof.setCollisionBox(0, 0, 0, 0);
+roof.z = 1;
+els.push(roof);
+var cloneViewConfig = JSON.parse(JSON.stringify(__WEBPACK_IMPORTED_MODULE_1__logic_config__["d" /* playerViewConfig */]));
+var cloneConfig = {
+    name: 'clone',
+    level: 1,
+    hp: 5,
+    ap: 3,
+    strenght: 5,
+    defense: 20,
+    acc: 70,
+    evasion: 10,
+    speed: 0.5,
+    view: cloneViewConfig
+};
+var street = {
+    background: 'assets/street/back.png',
+    elements: els,
+    enemiesTemplate: [cloneConfig]
+};
+//# sourceMappingURL=street.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/menu/menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"menu\">\n  \n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/menu/menu.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".menu {\n  border: 2px solid rgba(200, 200, 200, 0.8);\n  width: 220px;\n  height: 500px;\n  background: red; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/menu/menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MenuComponent = (function () {
+    function MenuComponent() {
+    }
+    MenuComponent.prototype.ngOnInit = function () {
+    };
+    return MenuComponent;
+}());
+MenuComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'menu',
+        template: __webpack_require__("../../../../../src/app/menu/menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/menu/menu.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], MenuComponent);
+
+//# sourceMappingURL=menu.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/environments/environment.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
+var environment = {
+    production: false
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/main.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* enableProdMode */])();
+}
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+    .catch(function (err) { return console.log(err); });
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("../../../../../src/main.ts");
+
+
+/***/ })
+
+},[0]);
+//# sourceMappingURL=main.bundle.js.map
