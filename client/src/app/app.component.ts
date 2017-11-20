@@ -9,11 +9,19 @@ import { Component, Inject } from '@angular/core';
 })
 export class AppComponent {
 
+    logged: boolean;
+
     constructor(){}
 
     ngOnInit(){
+
+      this.logged = false;
     }
 
-   
+    onLogin(result: boolean): void {
+      this.logged = result;
+    }
+
+
 }
 

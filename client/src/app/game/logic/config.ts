@@ -8,7 +8,6 @@ export enum Dir {
 
 export let CHAR_CONFIG = new InjectionToken<CharacterConfig>('character.configuration');
 
-
 export const playerViewConfig: CharacterViewConfig = {
 
     x : 300,
@@ -27,20 +26,7 @@ export const playerViewConfig: CharacterViewConfig = {
     animationSpeed: 1/130,
     source: 'images',
     alpha : 1
-}
-
-export const playerDefConfig: CharacterConfig = {
-    name : 'nn',
-    level : 1,
-    hp : 10,
-    ap : 5,
-    strenght : 10,
-    defense : 10,
-    acc : 80,
-    evasion : 20,
-    speed : 1,
-    view: playerViewConfig
-}
+};
 
 export const frames = {
 
@@ -48,4 +34,4 @@ export const frames = {
     stand : [12, 4, 0, 8],
     walk : [13, 5, 1, 9],
     jump : [17, 16, 1, 8]
-}
+};

@@ -1,34 +1,39 @@
-import { Dir, frames } from './config';
+import {Dir, frames, playerViewConfig} from './config';
 import { Drawable } from '../../interfaces/drawable.interface';
 import { CharacterViewConfig } from '../../interfaces/character-view.config.interface';
 import { CharacterConfig } from '../../interfaces/character.config.interface';
+import {UserService} from "../../login/user.service";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class Character implements CharacterConfig {
 
-    name: string;
     level: number;
+    exp: number;
+    strength: number;
+    dexteriety: number;
+    perception: number;
+    intelligence: number;
+    speed: number;
+
     hp: number;
     ap: number;
-    strenght: number;
-    defense: number;
     acc: number;
-    evasion: number;
-    speed: number;
-    dexteriety: number;
+    eva: number;
 
     view: CharacterView;
 
     constructor(config: CharacterConfig){
 
-        for(let field in config) this[field] = config[field];
-        this.view = new CharacterView(config.view);
+        for(let field in config) if(config.hasOwnProperty(field)) this[field] = config[field];
+        this.view = new CharacterView(playerViewConfig);
         this.view.sp = this.speed;
     }
 
     jump(): void {
         this.view.jump();
-        this.evasion += 20;
-        setTimeout(() => this.evasion -= 20, 250);
+        this.eva += 20;
+        setTimeout(() => this.eva -= 20, 250);
     }
 
     attack(): void {
@@ -41,6 +46,7 @@ export class Character implements CharacterConfig {
     }
 }
 
+@Injectable()
 export class Enemy extends Character {
 
     meta: {                                 // metadata for AI controlling enemy characters
@@ -196,7 +202,7 @@ export class CharacterView implements CharacterViewConfig, Drawable {
                     this.spr = end;
                     if(this.dir != Dir.NONE) this.walk(this.dir);
                 }
-            }
+            };
             setTimeout(nextFrame, 40);
         }
 

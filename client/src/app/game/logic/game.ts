@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { CharacterView, Character, Enemy } from './character';
-import { Dir, CHAR_CONFIG, playerViewConfig, playerDefConfig } from './config';
+import { Dir } from './config';
 import { CharacterViewConfig } from '../../interfaces/character-view.config.interface';
 import { CharacterConfig } from '../../interfaces/character.config.interface'
 import { Location, Element } from './location';
 import { MobControl } from './mob';
-import { street } from '../street/street';
-import { ConfigService } from '../../config.service';
 import { Drawable } from '../../interfaces/drawable.interface';
+import {UserService} from "../../login/user.service";
 
 @Injectable()
 export class GameService {
 
     player: Character;
     location: Location;
-    mob: MobControl
+    mob: MobControl;
 
-    constructor(configService: ConfigService){
-        this.location = new Location(configService.location);
-        this.player = new Character(configService.character);
-        this.mob = new MobControl(configService, this);
+    constructor(public userService: UserService){
+
+        this.player = new Character(userService.character);
+        this.location = new Location(userService);
+        this.mob = new MobControl(this);
         this.mob.startSpawning();
     }
 
@@ -30,7 +30,7 @@ export class GameService {
     }
 
     advance(delta: number): void {
-        
+
         this.player.view.move(delta);
         this.mob.action(delta);
 
@@ -64,24 +64,26 @@ export class GameService {
                 hitArea = new Element(attacker.view.x1, attacker.view.y2, attacker.view.w, range);
                 break;
         }
-        
+
         let inRange: Character[] = [];
-        if(!(attacker instanceof Enemy)) inRange = this.location.enemies.filter(enemy => Location.checkCollision(enemy.view, hitArea));
-        else if(Location.checkCollision(this.player.view, hitArea)) inRange.push(this.player);
-        
+
+        if(!(attacker instanceof Enemy))
+          inRange = this.location.enemies.filter(enemy => Location.checkCollision(enemy.view, hitArea));
+        else if(Location.checkCollision(this.player.view, hitArea))
+          inRange.push(this.player);
+
         for(let enemy of inRange){
 
             let hit: boolean = Math.random() * 100 < attacker.acc;
-            let evaded: boolean = Math.random() * 100 < enemy.evasion;
-            let damage: number = attacker.strenght - enemy.defense;
-            
-            if(damage < 1) damage = 1;
+            let evaded: boolean = Math.random() * 100 < enemy.eva;
+            let damage: number = 1;
+
             if(hit && !evaded) enemy.getHit(damage);
 
             if(enemy.hp <= 0) {
                 if(enemy instanceof Enemy) this.location.enemies.splice(this.location.enemies.indexOf(enemy), 1);
                 else this.player = null;
-            } 
+            }
         }
     }
 

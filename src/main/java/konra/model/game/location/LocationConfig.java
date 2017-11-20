@@ -1,14 +1,12 @@
-package konra;
+package konra.model.game.location;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import konra.model.game.EnemyConfig;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @Entity
@@ -28,7 +26,7 @@ public class LocationConfig {
                 joinColumns =        @JoinColumn(name = "location", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "enemy", referencedColumnName = "id"))
     @JsonManagedReference
-    private List<Enemy> enemies;
+    private List<EnemyConfig> enemyTemplates;
 
 //    @ElementCollection
 //    @MapKeyColumn(name = "direction")
@@ -55,11 +53,11 @@ public class LocationConfig {
         this.elements = elements;
     }
 
-    public List<Enemy> getEnemies() {
-        return enemies;
+    public List<EnemyConfig> getEnemyTemplates() {
+        return enemyTemplates;
     }
 
-    public void setEnemies(List<Enemy> enemies) {
-        this.enemies = enemies;
+    public void setEnemyTemplates(List<EnemyConfig> enemies) {
+        this.enemyTemplates = enemies;
     }
 }

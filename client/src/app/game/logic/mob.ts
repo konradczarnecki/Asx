@@ -3,18 +3,17 @@ import { CharacterView, Character, Enemy } from './character';
 import { GameService } from './game';
 import { CharacterConfig } from '../../interfaces/character.config.interface'
 import { LocationConfig } from '../../interfaces/location.config.interface'
-import { ConfigService } from '../../config.service';
 import { Location } from './location';
 import { Dir } from './config';
 
 export class MobControl {
 
-    constructor(private config: ConfigService, private game: GameService){}
-    
+    constructor(private game: GameService){}
+
     startSpawning(): void {
 
         let spawn = (): void => {
-            for(let enmTemplate of this.config.location.enemiesTemplate)
+            for(let enmTemplate of this.game.location.enemyTemplates)
                 if(Math.random() < 1 && this.game.location.enemies.length < 1) this.spawn(enmTemplate);
 
             setTimeout(spawn, 4000);
@@ -31,13 +30,13 @@ export class MobControl {
             toSpawn.view.x = Math.random() - 0.5 > 0 ? -100 : 1100;
             toSpawn.view.y = Math.random() * 500;
         } while (this.game.location.checkMapCollisions(toSpawn.view))
-    
-        toSpawn.view.changeDirection(Dir.RIGHT);        
+
+        toSpawn.view.changeDirection(Dir.RIGHT);
         toSpawn.meta = {
             timer : 0
-        }
+        };
 
-        this.game.location.enemies.push(toSpawn);        
+        this.game.location.enemies.push(toSpawn);
     }
 
     action(delta: number): void {
@@ -51,7 +50,7 @@ export class MobControl {
                 if(enemy.view.speedX > 0 || enemy.view.speedY > 0) enemy.view.stop();
                 this.game.attack(enemy);
 
-            } else this.move(enemy, dx, dy, delta); 
+            } else this.move(enemy, dx, dy, delta);
 
             if(Location.checkCollision(this.game.player.view, enemy.view)) enemy.view.moveBack(delta);
         }

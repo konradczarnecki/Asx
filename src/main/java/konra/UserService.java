@@ -1,5 +1,6 @@
 package konra;
 
+import konra.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,10 @@ public class UserService {
     @Transactional
     public User getUserByUsername(String username){
         return dao.getUserByUsername(username);
+    }
+
+    public String getToken(User user) {
+
+        return "stub";
     }
 }

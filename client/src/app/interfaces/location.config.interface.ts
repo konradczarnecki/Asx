@@ -3,7 +3,7 @@ import { Character } from '../game/logic/character';
 import { CharacterConfig } from './character.config.interface';
 
 export interface LocationConfig {
-    background: string;
+    id: string;
     elements: Element[];
-    enemiesTemplate: CharacterConfig[];
+    enemyTemplates: CharacterConfig[];
 }

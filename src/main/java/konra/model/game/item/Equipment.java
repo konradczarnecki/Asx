@@ -1,4 +1,4 @@
-package konra;
+package konra.model.game.item;
 
 import java.util.List;
 

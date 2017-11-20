@@ -1,17 +1,22 @@
-package konra;
+package konra.model.game;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "enemies")
-public class Enemy {
+@Table(name = "characters")
+public class CharacterConfig {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private String id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "lvl")
+    private int lvl;
+
+    @Column(name = "exp")
+    private int exp;
 
     @Column(name = "strength")
     private int strength;
@@ -28,10 +33,13 @@ public class Enemy {
     @Column(name = "speed")
     private int speed;
 
-    @Column(name = "spawn")
-    private float spawnChance;
+//    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private Weapon weapon;
+//
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<Clothing> clothing;
 
-    public Enemy() {
+    public CharacterConfig() {
     }
 
     public String getId() {
@@ -42,20 +50,20 @@ public class Enemy {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getLvl() {
+        return lvl;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
     }
 
-    public float getSpawnChance() {
-        return spawnChance;
+    public int getExp() {
+        return exp;
     }
 
-    public void setSpawnChance(float spawnChance) {
-        this.spawnChance = spawnChance;
+    public void setExp(int exp) {
+        this.exp = exp;
     }
 
     public int getStrength() {

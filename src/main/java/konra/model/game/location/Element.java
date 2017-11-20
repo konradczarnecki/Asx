@@ -1,4 +1,4 @@
-package konra;
+package konra.model.game.location;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,6 +20,7 @@ public class Element {
 
     @Column(name = "x") private int x;
     @Column(name = "y") private int y;
+    @Column(name = "z") private int z;
     @Column(name = "w") private int w;
     @Column(name = "h") private int h;
 
@@ -55,6 +56,14 @@ public class Element {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public int getZ() {
+        return z;
+    }
+
+    public void setZ(int z) {
+        this.z = z;
     }
 
     public int getW() {

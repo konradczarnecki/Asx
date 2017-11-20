@@ -1,4 +1,9 @@
-package konra;
+package konra.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import konra.model.game.CharacterConfig;
+import konra.model.game.location.LocationConfig;
 
 import javax.persistence.*;
 
@@ -8,8 +13,9 @@ public class User {
 
     @Id
     @Column(name = "username")
-    private String usrname;
+    private String username;
 
+    @JsonIgnore
     @Column(name = "pwd")
     private String password;
 
@@ -19,17 +25,17 @@ public class User {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "location", referencedColumnName = "id")
-    private LocationConfig locationId;
+    private LocationConfig location;
 
     public User() {
     }
 
-    public String getUsrname() {
-        return usrname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsrname(String usrname) {
-        this.usrname = usrname;
+    public void setUsername(String usrname) {
+        this.username = usrname;
     }
 
     public String getPassword() {
@@ -48,11 +54,11 @@ public class User {
         this.character = character;
     }
 
-    public LocationConfig getLocationId() {
-        return locationId;
+    public LocationConfig getLocation() {
+        return location;
     }
 
-    public void setLocationId(LocationConfig locationId) {
-        this.locationId = locationId;
+    public void setLocation(LocationConfig location) {
+        this.location = location;
     }
 }

@@ -1,5 +1,6 @@
 package konra;
 
+import konra.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;

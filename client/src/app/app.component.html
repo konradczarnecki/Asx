@@ -1,6 +1,7 @@
 <div class="wrapper">
     <menu id="menu"></menu>
-    <game id="game"></game>
+    <game id="game" *ngIf="logged"></game>
     <console id="console"></console>
+    <login id="login" *ngIf="!logged" (logged)="onLogin($event)"></login>
 </div>
 

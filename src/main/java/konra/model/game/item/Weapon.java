@@ -1,6 +1,4 @@
-package konra;
-
-import java.util.List;
+package konra.model.game.item;
 
 public class Weapon {
 

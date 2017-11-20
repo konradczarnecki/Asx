@@ -16,11 +16,11 @@
         <!--<class-cache class="org.hibernate.auction.Bid" usage="read-only"/>-->
         <!--<collection-cache collection="org.hibernate.auction.Item.bids" usage="read-write"/>-->
 
-        <mapping class="konra.User"/>
-        <mapping class="konra.CharacterConfig"/>
-        <mapping class="konra.LocationConfig"/>
-        <mapping class="konra.Element"/>
-        <mapping class="konra.Enemy"/>
+        <mapping class="konra.model.User"/>
+        <mapping class="konra.model.game.CharacterConfig"/>
+        <mapping class="konra.model.game.location.LocationConfig"/>
+        <mapping class="konra.model.game.location.Element"/>
+        <mapping class="konra.model.game.EnemyConfig"/>
 
     </session-factory>
 
